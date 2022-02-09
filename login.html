@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="style2.css" rel="stylesheet" />
+    <title>Forma</title>
+    <style>
+        .mainBox {
+            background-color: mediumspringgreen;
+            width: 400px;
+            height: 500px;
+        }
+        
+        .box {
+            background-color: whitesmoke;
+            width: 350px;
+            height: 400px;
+            margin-top: 10px;
+            position: absolute;
+            margin-left: 25px;
+            background-size: cover;
+            background-image: url("https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg");
+        }
+        
+        input::placeholder {
+            color: rgba(31, 13, 13, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="mainBox">
+            <div class="box">
+                <div class="title">
+                    <h2>Login form</h2>
+                </div>
+                <div>
+                    <label for="uname"><b>E-Mail Address</b></label>
+                    <input placeholder="Enter dsaddadsY" name="uname" required>
+                </div>
+                <div>
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                </div>
+                <div>
+                    <button type="submit" class="submit">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+.flexBox {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    width: 200px;
+    height: 200px;
+    box-shadow: black 0px 2px 5px;
+}
+
+.flexBox:hover {
+    box-shadow: black 0px 5px 10px;
+    transition: 1s;
+}
+
+.flexBox>div {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.flexBox>div:first-child>div {
+    background-color: yellow;
+}
+
+.flexBox>div:nth-child(2)>div {
+    background-color: green;
+}
+
+.flexBox>div:last-child>div {
+    background-color: red;
+}
+
+.flexBox>div>div {
+    border: 1px black solid;
+    flex: 1 1 auto;
+    align-items: stretch;
+}
+
+.flexBox>div>div:hover {
+    background-color: blue;
+    transition: 0.5s;
+}

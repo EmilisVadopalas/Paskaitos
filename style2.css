@@ -1,0 +1,21 @@
+.title {
+    background-color: mediumaquamarine;
+    color: whitesmoke;
+    width: 350px;
+    height: 50px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.form {
+    text-align: left;
+    margin-left: 25px;
+    text-align: center;
+}
+
+.submit {
+    width: 250px;
+    height: 50px;
+    margin-left: 50px;
+    text-align: center;
+}

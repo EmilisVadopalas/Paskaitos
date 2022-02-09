@@ -1,0 +1,151 @@
+body {
+    background-image: url("https://www.teahub.io/photos/full/208-2081221_full-hd-colorful-background.jpg");
+}
+
+.navbarContainer {
+    display: flex;
+    background-color: rgb(202, 121, 121);
+    border-radius: 10px;
+    height: 80px;
+}
+
+.navbarContainer li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 14pt;
+    font-family: 'Lucida Sans';
+}
+
+.navbarContainer hr {
+    margin-left: 15%;
+    margin-right: 2%;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo img {
+    width: 50px;
+    vertical-align: middle;
+    padding-left: 20px;
+    margin-right: -100px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-item a {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.loginWindow {
+    width: 300px;
+    height: 400px;
+    background-color: #EFF1DD;
+    margin-left: 200px;
+    margin-top: 50px;
+    border-radius: 2%;
+}
+
+.fieldsDiv {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.inputFields {
+    height: 30px;
+    width: 235px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.email {
+    padding-top: 5px;
+}
+
+.password {
+    padding-top: 10px;
+}
+
+.loginButton-container {
+    padding-top: 20px;
+}
+
+.loginButton {
+    height: 40px;
+    width: 240px;
+    border-radius: 5px;
+    background-color: rgb(214, 150, 150);
+    color: white;
+    font-family: 'Lucida Sans';
+    font-size: 12pt;
+    cursor: pointer;
+}
+
+.loginButton:active:hover {
+    height: 40px;
+    width: 240px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-family: 'Lucida Sans';
+    font-size: 12pt;
+    cursor: pointer;
+}
+
+.title {
+    font-family: 'Lucida Sans';
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.loginSignup-buttons-container {
+    display: grid;
+    grid-template-columns: 120px 120px;
+    padding-left: 30px;
+}
+
+.loginSignup-buttons {
+    height: 30px;
+    font-family: 'Lucida Sans';
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.active,
+.loginSignup-buttons:hover {
+    height: 30px;
+    font-family: 'Lucida Sans';
+    background-color: rgb(214, 150, 150);
+    color: white;
+}
+
+::placeholder {
+    font-family: 'Lucida Sans';
+}
+
+.forgot-password {
+    font-family: 'Lucida Sans';
+    font-size: 11pt;
+    color: rgb(214, 150, 150);
+}
+
+h3 {
+    font-family: 'Lucida Sans';
+    font-size: 11pt;
+}
+
+.signUpLink {
+    color: rgb(214, 150, 150);
+}
+
+.bottomText {
+    margin-left: 10px;
+}

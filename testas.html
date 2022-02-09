@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Testas</title>
+</head>
+<style>
+    .flexBox {
+        display: flex;
+        flex-direction: column;
+        box-shadow: black 0px 2px 5px;
+    }
+    
+    .flexBox:hover {
+        box-shadow: black 0px 5px 10px;
+        transition: 1s;
+    }
+    
+    .flexBox>div {
+        display: flex;
+        flex-grow: calc();
+    }
+    
+    .flexBox>div:first-child>div {
+        background-color: yellow;
+    }
+    
+    .flexBox>div:nth-child(2)>div {
+        background-color: green;
+    }
+    
+    .flexBox>div:last-child>div {
+        background-color: red;
+    }
+    
+    .flexBox>div>div {
+        border: 1px black solid;
+        flex: 1 1 auto;
+        align-items: stretch;
+        flex-grow: calc();
+    }
+    
+    .flexBox>div>div:hover {
+        background-color: blue;
+        transition: 0.5s;
+    }
+</style>
+
+<body>
+    <div class="flexBox">
+        <div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>
