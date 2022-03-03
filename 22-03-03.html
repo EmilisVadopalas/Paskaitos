@@ -21,6 +21,7 @@
         ];
 
 
+        //Turime masyvą vardų - atspausdinti vardus atbuline tvarka.        
         function firsArrayTask() {
             var reverseNameList = [];
             var lenghtOfArray = nameList.length - 1;
@@ -33,6 +34,7 @@
             console.log(reverseNameList);
         }
 
+        //Pasunkinimas: turite nesukurti naujo masyvo.
         function firstArrayHarder() {
 
             console.log(nameList);
@@ -51,10 +53,17 @@
             console.log(nameList);
         }
 
+        //Turime masyvą vardų - parašykite algoritmą, 
+        //kuris pasakytų ar yra konkretus vardas tame masyve. 
+        //Turite nesukurti naujo masyvo. Turite atspausdinti “Taip”/”Ne”.
         function SecondArrayTask(name) {
             return nameList.includes(name) ? `Taip (${name})` : `Ne (${name})`;
         }
 
+        //Turime masyvą vardų - iš to masyvo sukonstruokite kitą masyvą,
+        //kuriame yra vardai, ilgesni nei 6 simbiliai. 
+        //Programoje turi būti max 2 masyvai. 
+        //Gale programos naują masyvą atspausdinkite.
         function ThirdArrayTask() {
             var newLongNameList = [];
 
@@ -70,6 +79,7 @@
             console.log(newLongNameList);
         }
 
+        //Funkciju iskvietimai, kad matytusi console loge, rezultatai 
         console.log("Pirma array uzduotis: ");
         firsArrayTask();
         console.log(" \n \n \nPirma array uzduotis (su pasunkinimu): ");
@@ -82,9 +92,6 @@
         console.log(" \n \n \nTrecia array uzduotis: ");
         ThirdArrayTask();
     </script>
-</body>
-
-<body>
 </body>
 
 </html>
