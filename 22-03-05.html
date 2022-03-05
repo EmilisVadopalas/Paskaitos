@@ -28,9 +28,20 @@
             return count;
         }
 
+        //Antra uzduotis
+        function printEveryNthElementOfInnerArrays(arr, n) {
+            for (var i = 0; i < arr.length; i++) {
+                console.log(arr[i][n]);
+            }
+        }
 
 
+        //pirmos uzduoties paleidimas
         console.log(`Ciklas prasisuko: ${printEveryElementOd2DArray(array2DNumbers)} kartu/us`);
+
+        //antros uzduoties paleidimas
+        printEveryNthElementOfInnerArrays(array2DNumbers, 0);
+        printEveryNthElementOfInnerArrays(array2DNumbers, 1);
     </script>
 </body>
 
