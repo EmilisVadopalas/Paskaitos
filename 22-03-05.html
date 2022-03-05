@@ -49,15 +49,8 @@
             PriceToDrive: function(price) {
                 return price * this.KuroSanaudos;
             },
-            PriceToDriveObj: function(price) {
-                switch (this.Kuras) {
-                    case "Dyzelinas":
-                        return price.Dyzelinas * this.KuroSanaudos;
-                    case "Benzinas":
-                        return price.Benzinas * this.KuroSanaudos;
-                    case "Dujos":
-                        return price.Dujos * this.KuroSanaudos;
-                }
+            PriceToDriveObj: function(price) { //galima taip
+                return price[this.Kuras] * this.KuroSanaudos;
             }
         }
 
@@ -71,7 +64,7 @@
             PriceToDrive: function(price) {
                 return price * this.KuroSanaudos;
             },
-            PriceToDriveObj: function(price) {
+            PriceToDriveObj: function(price) { //galima su switchais ar dar kitaip
                 switch (this.Kuras) {
                     case "Dyzelinas":
                         return price.Dyzelinas * this.KuroSanaudos;
@@ -95,26 +88,18 @@
                 return price * this.KuroSanaudos;
             },
             PriceToDriveObj: function(price) {
-                switch (this.Kuras) {
-                    case "Dyzelinas":
-                        return price.Dyzelinas * this.KuroSanaudos;
-                    case "Benzinas":
-                        return price.Benzinas * this.KuroSanaudos;
-                    case "Dujos":
-                        return price.Dujos * this.KuroSanaudos;
-                }
+                return price[this.Kuras] * this.KuroSanaudos;
             }
         }
 
         //ketvirta uzduotis: susikurti kuro kainu objekta
-        var KuroKainos = {
+        var kuroKainos = {
             Dyzelinas: 1.2,
             Benzinas: 1.4,
             Dujos: 1.1
         }
 
         //Penkta uzduotis: sukurti funkcija kuri apskaiciuoja specifinio automobilio kaina 100Km
-
         function PriceToDrive(Car, FuelPrice) {
             switch (Car.Kuras) {
                 case "Dyzelinas":
@@ -135,21 +120,21 @@
 
         console.log("\nFunction");
         //Function
-        console.log(PriceToDrive(MyCar1, KuroKainos))
-        console.log(PriceToDrive(MyCar2, KuroKainos))
-        console.log(PriceToDrive(MyCar3, KuroKainos))
+        console.log(PriceToDrive(MyCar1, kuroKainos))
+        console.log(PriceToDrive(MyCar2, kuroKainos))
+        console.log(PriceToDrive(MyCar3, kuroKainos))
 
         console.log("\nMethod way 1");
         //methods just passing price
-        console.log(MyCar1.PriceToDrive(1.4))
-        console.log(MyCar2.PriceToDrive(1.2))
-        console.log(MyCar3.PriceToDrive(1.4))
+        console.log(MyCar1.PriceToDrive(kuroKainos.Benzinas))
+        console.log(MyCar2.PriceToDrive(kuroKainos.Dyzelinas))
+        console.log(MyCar3.PriceToDrive(kuroKainos.Benzinas))
 
         console.log("\nMethod way 2");
         //method passing fuel price object
-        console.log(MyCar1.PriceToDriveObj(KuroKainos))
-        console.log(MyCar2.PriceToDriveObj(KuroKainos))
-        console.log(MyCar3.PriceToDriveObj(KuroKainos))
+        console.log(MyCar1.PriceToDriveObj(kuroKainos))
+        console.log(MyCar2.PriceToDriveObj(kuroKainos))
+        console.log(MyCar3.PriceToDriveObj(kuroKainos))
     </script>
 </body>
 
