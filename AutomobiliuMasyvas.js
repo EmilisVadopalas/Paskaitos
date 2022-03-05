@@ -133,3 +133,13 @@ arrayOfCars = [{
         KuroTipas: "Benzinas",
     }
 ];
+
+groupedCars = [{
+        group: "Audi",
+        Cars: [X, Y, Z]
+    },
+    {
+        group: "Fiat",
+        Cars: [X, Y, Z]
+    }
+]
