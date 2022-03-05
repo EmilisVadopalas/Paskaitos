@@ -36,12 +36,120 @@
             }
         }
 
+        //Tecia uzduotis, susikurti 3-ys masinu objektus
+        //6 uzduotis sukuriti metodus funkcijai kuro kainai apskaiciuoti tiesiog padavus kaina
+        //7 uzduotis sukurti metodus funkcijai kurai kainai apskaiciuoti padavus kuro kainos objekta
+        var MyCar1 = {
+            Marke: "Mercedes",
+            Modelis: "SL111",
+            Metai: 2015,
+            Spalva: "Pilka",
+            KuroSanaudos: 8.6,
+            Kuras: "Benzinas",
+            PriceToDrive: function(price) {
+                return price * this.KuroSanaudos;
+            },
+            PriceToDriveObj: function(price) {
+                switch (this.Kuras) {
+                    case "Dyzelinas":
+                        return price.Dyzelinas * this.KuroSanaudos;
+                    case "Benzinas":
+                        return price.Benzinas * this.KuroSanaudos;
+                    case "Dujos":
+                        return price.Dujos * this.KuroSanaudos;
+                }
+            }
+        }
+
+        var MyCar2 = {
+            Marke: "Audi",
+            Modelis: "A4",
+            Metai: 2018,
+            Spalva: "Melyna",
+            KuroSanaudos: 7.2,
+            Kuras: "Dyzelinas",
+            PriceToDrive: function(price) {
+                return price * this.KuroSanaudos;
+            },
+            PriceToDriveObj: function(price) {
+                switch (this.Kuras) {
+                    case "Dyzelinas":
+                        return price.Dyzelinas * this.KuroSanaudos;
+                    case "Benzinas":
+                        return price.Benzinas * this.KuroSanaudos;
+                    case "Dujos":
+                        return price.Dujos * this.KuroSanaudos;
+                }
+            }
+
+        }
+
+        var MyCar3 = {
+            Marke: "Fiat",
+            Modelis: "500",
+            Metai: 2012,
+            Spalva: "Zalia",
+            KuroSanaudos: 5.9,
+            Kuras: "Benzinas",
+            PriceToDrive: function(price) {
+                return price * this.KuroSanaudos;
+            },
+            PriceToDriveObj: function(price) {
+                switch (this.Kuras) {
+                    case "Dyzelinas":
+                        return price.Dyzelinas * this.KuroSanaudos;
+                    case "Benzinas":
+                        return price.Benzinas * this.KuroSanaudos;
+                    case "Dujos":
+                        return price.Dujos * this.KuroSanaudos;
+                }
+            }
+        }
+
+        //ketvirta uzduotis: susikurti kuro kainu objekta
+        var KuroKainos = {
+            Dyzelinas: 1.2,
+            Benzinas: 1.4,
+            Dujos: 1.1
+        }
+
+        //Penkta uzduotis: sukurti funkcija kuri apskaiciuoja specifinio automobilio kaina 100Km
+
+        function PriceToDrive(Car, FuelPrice) {
+            switch (Car.Kuras) {
+                case "Dyzelinas":
+                    return FuelPrice.Dyzelinas * Car.KuroSanaudos;
+                case "Benzinas":
+                    return FuelPrice.Benzinas * Car.KuroSanaudos;
+                case "Dujos":
+                    return FuelPrice.Dujos * Car.KuroSanaudos;
+            }
+        }
+
         //pirmos uzduoties paleidimas
         console.log(`Ciklas prasisuko: ${printEveryElementOd2DArray(array2DNumbers)} kartu/us`);
 
         //antros uzduoties paleidimas
         printEveryNthElementOfInnerArrays(array2DNumbers, 0);
         printEveryNthElementOfInnerArrays(array2DNumbers, 1);
+
+        console.log("\nFunction");
+        //Function
+        console.log(PriceToDrive(MyCar1, KuroKainos))
+        console.log(PriceToDrive(MyCar2, KuroKainos))
+        console.log(PriceToDrive(MyCar3, KuroKainos))
+
+        console.log("\nMethod way 1");
+        //methods just passing price
+        console.log(MyCar1.PriceToDrive(1.4))
+        console.log(MyCar2.PriceToDrive(1.2))
+        console.log(MyCar3.PriceToDrive(1.4))
+
+        console.log("\nMethod way 2");
+        //method passing fuel price object
+        console.log(MyCar1.PriceToDriveObj(KuroKainos))
+        console.log(MyCar2.PriceToDriveObj(KuroKainos))
+        console.log(MyCar3.PriceToDriveObj(KuroKainos))
     </script>
 </body>
 
