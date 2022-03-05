@@ -39,6 +39,15 @@
         //Tecia uzduotis, susikurti 3-ys masinu objektus
         //6 uzduotis sukuriti metodus funkcijai kuro kainai apskaiciuoti tiesiog padavus kaina
         //7 uzduotis sukurti metodus funkcijai kurai kainai apskaiciuoti padavus kuro kainos objekta
+
+        function PriceToDriveObjMethod(price) {
+            return price[this.Kuras] * this.KuroSanaudos;
+        }
+
+        function PriceToDriveMethod(price) {
+            return price * this.KuroSanaudos;
+        }
+
         var MyCar1 = {
             Marke: "Mercedes",
             Modelis: "SL111",
@@ -46,12 +55,8 @@
             Spalva: "Pilka",
             KuroSanaudos: 8.6,
             Kuras: "Benzinas",
-            PriceToDrive: function(price) {
-                return price * this.KuroSanaudos;
-            },
-            PriceToDriveObj: function(price) { //galima taip
-                return price[this.Kuras] * this.KuroSanaudos;
-            }
+            PriceToDrive: PriceToDriveMethod,
+            PriceToDriveObj: PriceToDriveObjMethod
         }
 
         var MyCar2 = {
@@ -61,19 +66,8 @@
             Spalva: "Melyna",
             KuroSanaudos: 7.2,
             Kuras: "Dyzelinas",
-            PriceToDrive: function(price) {
-                return price * this.KuroSanaudos;
-            },
-            PriceToDriveObj: function(price) { //galima su switchais ar dar kitaip
-                switch (this.Kuras) {
-                    case "Dyzelinas":
-                        return price.Dyzelinas * this.KuroSanaudos;
-                    case "Benzinas":
-                        return price.Benzinas * this.KuroSanaudos;
-                    case "Dujos":
-                        return price.Dujos * this.KuroSanaudos;
-                }
-            }
+            PriceToDrive: PriceToDriveMethod,
+            PriceToDriveObj: PriceToDriveObjMethod
 
         }
 
@@ -84,12 +78,8 @@
             Spalva: "Zalia",
             KuroSanaudos: 5.9,
             Kuras: "Benzinas",
-            PriceToDrive: function(price) {
-                return price * this.KuroSanaudos;
-            },
-            PriceToDriveObj: function(price) {
-                return price[this.Kuras] * this.KuroSanaudos;
-            }
+            PriceToDrive: PriceToDriveMethod,
+            PriceToDriveObj: PriceToDriveObjMethod
         }
 
         //ketvirta uzduotis: susikurti kuro kainu objekta
