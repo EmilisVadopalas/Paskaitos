@@ -19,14 +19,15 @@
         //Pirma uzduotis
         function printEveryElementOd2DArray(arr) {
             var count = 0;
-            for (var i = 0; i < arr.length; i++) {
-                for (var j = 0; j < arr[i].length; j++) {
+            for (var i = 0; i < arr.length; i++) { // 0, 1, 2
+                for (var j = 0; j < arr[i].length; j++) { // 4, 4, 3
                     console.log(arr[i][j]);
                     count++;
                 }
             }
             return count;
         }
+        //P.S. 2D array tures 2 ciklus, 3D - trys, 4D - keturis ir t.t.
 
         //Antra uzduotis
         function printEveryNthElementOfInnerArrays(arr, n) {
@@ -34,7 +35,6 @@
                 console.log(arr[i][n]);
             }
         }
-
 
         //pirmos uzduoties paleidimas
         console.log(`Ciklas prasisuko: ${printEveryElementOd2DArray(array2DNumbers)} kartu/us`);
