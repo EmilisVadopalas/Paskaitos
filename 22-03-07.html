@@ -67,15 +67,12 @@
                 var Subjects = [];
 
                 student.subject_grades.forEach(sub => {
-
                     var gradesSum = sub.grades.reduce((prev, current) => prev + current);
                     var avarageGrade = gradesSum / sub.grades.length;
-
                     let subject = {
                         subject_name: sub.subject_name,
                         avarageGrade: avarageGrade.toFixed(2)
                     };
-
                     Subjects.push(subject);
                 });
 
@@ -90,8 +87,35 @@
             return avrSubjectStudents;
         }
 
+        //3. is 2tros uzduoties masyvo apskaiciuoti bendra vidurki
+        function StudentAverageGradeObjectFromStudentsWithSubjects(students) {
+
+            avrSubjectStudents = [];
+
+            students.forEach(student => {
+                var Subjects = [];
+
+                var avarageGrade = 0;
+
+                student.subject_grades.forEach(sub => {
+                    var gradesSum = sub.grades.reduce((prev, current) => prev + current);
+                    avarageGrade += gradesSum / sub.grades.length;
+                });
+
+                var avrSubjectStudent = {
+                    name: student.name,
+                    avarageGrade: (avarageGrade / student.subject_grades.length).toFixed(2)
+                };
+
+                avrSubjectStudents.push(avrSubjectStudent);
+            });
+
+            return avrSubjectStudents;
+        }
+
         console.log(StudentAveragesObject(students));
         console.log(StudentAverageSubjectGradeObject(studentsWithGrades));
+        console.log(StudentAverageGradeObjectFromStudentsWithSubjects(studentsWithGrades));
     </script>
 </body>
 
