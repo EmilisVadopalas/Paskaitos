@@ -18,6 +18,26 @@
             grades: [10, 5, 7, 10]
         }, ];
 
+        let studentsWithGrades = [{
+            name: "Mindaugas",
+            subject_grades: [{
+                subject_name: "Lietuvių",
+                grades: [10, 7, 8]
+            }, {
+                subject_name: "Matematika",
+                grades: [10, 7, 8]
+            }, ]
+        }, {
+            name: "Jonas",
+            subject_grades: [{
+                subject_name: "Lietuvių",
+                grades: [5, 7, 8]
+            }, {
+                subject_name: "Matematika",
+                grades: [8, 7, 8]
+            }, ]
+        }, ];
+
 
         //1. uzduotis (apskaiciuoti vidurki ir isvesti nauja objekta)
         function StudentAveragesObject(students) {
@@ -25,7 +45,7 @@
             avrGradeStudents = [];
 
             students.forEach(student => {
-                var gradesSum = student.grades.reduce((p, q) => p + q);
+                var gradesSum = student.grades.reduce((prev, current) => prev + current);
                 var avarageGrade = gradesSum / student.grades.length;
                 var avgGradeStudent = {
                     name: student.name,
@@ -37,8 +57,41 @@
             return avrGradeStudents;
         }
 
+        //2. uzduotis (apskaiciuoti specifines pamokos vidurkius studentams)
+        function StudentAverageSubjectGradeObject(students) {
+
+            avrSubjectStudents = [];
+
+            students.forEach(student => {
+
+                var Subjects = [];
+
+                student.subject_grades.forEach(sub => {
+
+                    var gradesSum = sub.grades.reduce((prev, current) => prev + current);
+                    var avarageGrade = gradesSum / sub.grades.length;
+
+                    let subject = {
+                        subject_name: sub.subject_name,
+                        avarageGrade: avarageGrade.toFixed(2)
+                    };
+
+                    Subjects.push(subject);
+                });
+
+                var avrSubjectStudent = {
+                    name: student.name,
+                    subject_grades: Subjects
+                };
+
+                avrSubjectStudents.push(avrSubjectStudent);
+            });
+
+            return avrSubjectStudents;
+        }
 
         console.log(StudentAveragesObject(students));
+        console.log(StudentAverageSubjectGradeObject(studentsWithGrades));
     </script>
 </body>
 
