@@ -237,8 +237,15 @@
             }
         }
 
+        //uzduotis: sugrupuoti pagal markes
         function GroupCarsByCarMake(array) {
+
+            //kad butu paprasciau uzduoti apgriepti, iskaidom uzduoti:
+            //1. issiaiskinti visas masinu markes.
+            //2. kiekvienam markes objektui priskirti automobilius su tokiomis pat markemis
+
             var carMakes = [];
+
             var result = [];
 
             array.forEach(car => {
@@ -247,19 +254,20 @@
                 }
             });
 
+            //carMakes kintamasis, turi visas skirtingas markes
             carMakes.forEach(make => {
-                var grouped = {
-                    group: make,
+                var group = {
+                    groupName: make,
                     Cars: []
                 }
 
                 array.forEach(car => {
-                    if (grouped.group == car.Marke) {
-                        grouped.Cars.push(car);
+                    if (make == car.Marke) {
+                        group.Cars.push(car);
                     }
                 });
 
-                result.push(grouped);
+                result.push(group);
             });
 
             return result;
