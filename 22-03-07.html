@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <title>2022-03-07</title>
+</head>
+
+<body>
+    <script>
+        var students = [{
+            name: "Mindaugas",
+            grades: [10, 5, 7]
+        }, {
+            name: "Jonas",
+            grades: [10, 5, 7]
+        }, {
+            name: "Ana",
+            grades: [10, 5, 7, 10]
+        }, ];
+
+
+        //1. uzduotis (apskaiciuoti vidurki ir isvesti nauja objekta)
+        function StudentAveragesObject(students) {
+
+            avrGradeStudents = [];
+
+            students.forEach(student => {
+                var gradesSum = student.grades.reduce((p, q) => p + q);
+                var avarageGrade = gradesSum / student.grades.length;
+                var avgGradeStudent = {
+                    name: student.name,
+                    avarageGrade: avarageGrade.toFixed(2)
+                };
+                avrGradeStudents.push(avgGradeStudent);
+            });
+
+            return avrGradeStudents;
+        }
+
+
+        console.log(StudentAveragesObject(students));
+    </script>
+</body>
+
+</html>
