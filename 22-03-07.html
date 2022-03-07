@@ -18,6 +18,20 @@
             grades: [10, 5, 7, 10]
         }, ];
 
+        var studentsMore = [{
+            name: "Mindaugas",
+            grades: [10, 5, 7]
+        }, {
+            name: "Jonas",
+            grades: [10, 5, 7]
+        }, {
+            name: "Ana",
+            grades: [10, 5, 7, 10]
+        }, {
+            name: "Ona",
+            grades: [10, 5, 7, 10, 9, 10, 9]
+        }, ];
+
         let studentsWithGrades = [{
             name: "Mindaugas",
             subject_grades: [{
@@ -42,7 +56,7 @@
         //1. uzduotis (apskaiciuoti vidurki ir isvesti nauja objekta)
         function StudentAveragesObject(students) {
 
-            avrGradeStudents = [];
+            var avrGradeStudents = [];
 
             students.forEach(student => {
                 var gradesSum = student.grades.reduce((prev, current) => prev + current);
@@ -60,7 +74,7 @@
         //2. uzduotis (apskaiciuoti specifines pamokos vidurkius studentams)
         function StudentAverageSubjectGradeObject(students) {
 
-            avrSubjectStudents = [];
+            var avrSubjectStudents = [];
 
             students.forEach(student => {
 
@@ -69,10 +83,12 @@
                 student.subject_grades.forEach(sub => {
                     var gradesSum = sub.grades.reduce((prev, current) => prev + current);
                     var avarageGrade = gradesSum / sub.grades.length;
+
                     let subject = {
                         subject_name: sub.subject_name,
                         avarageGrade: avarageGrade.toFixed(2)
                     };
+
                     Subjects.push(subject);
                 });
 
@@ -90,7 +106,7 @@
         //3. is 2tros uzduoties masyvo apskaiciuoti bendra vidurki
         function StudentAverageGradeObjectFromStudentsWithSubjects(students) {
 
-            avrSubjectStudents = [];
+            var avrSubjectStudents = [];
 
             students.forEach(student => {
                 var Subjects = [];
@@ -113,7 +129,29 @@
             return avrSubjectStudents;
         }
 
+
+        // find avarage of this array with 3-tyoes of functions
+        var arrat = [2, 2, 4, 5, 89, 81, 5, 84, 984, 514, 21, 24, 842, 5814, 5, 54, 854, 584, 54, 5, 46, 4, 85];
+
+        //Tradicine
+        function Tradicine(array) {
+            return array.reduce((x, y) => x + y) / array.length;
+        }
+
+        //anonymous
+        var Anonymous = function(array) {
+            return array.reduce((x, y) => x + y) / array.length;
+        }
+
+        //arrow
+        var Arrow = (array) => array.reduce((x, y) => x + y) / array.length;
+
+        console.log(Tradicine(arrat));
+        console.log(Anonymous(arrat));
+        console.log(Arrow(arrat));
+
         console.log(StudentAveragesObject(students));
+        console.log(StudentAveragesObject(studentsMore));
         console.log(StudentAverageSubjectGradeObject(studentsWithGrades));
         console.log(StudentAverageGradeObjectFromStudentsWithSubjects(studentsWithGrades));
     </script>
