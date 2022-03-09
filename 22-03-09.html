@@ -17,16 +17,32 @@
         }
 
         //Pirma su pasunkinimu
-        var factorialShort = (number) => number == 1 ? number : number * factorial(number - 1);
+        var factorialShort = (number) => number == 1 ? number : number * factorialShort(number - 1);
 
 
+        //Antra uzduotis
+        function FibionachiFinder(nth) {
+            if (nth <= 1) {
+                return nth;
+            }
+            return FibionachiFinder(nth - 1) + FibionachiFinder(nth - 2);
+        }
+
+        //Antros uzduoties pasunkinimas
+        var FibionachiFinderShort = (nth) => nth <= 1 ? nth : FibionachiFinderShort(nth - 1) + FibionachiFinderShort(nth - 2);
 
 
         console.log(factorialShort(6));
         console.log(factorialShort(5));
-        console.log(factorial(4));
-        console.log(factorial(3));
-        console.log(factorial(2));
+        console.log(factorialShort(4));
+        console.log(factorialShort(3));
+        console.log(factorialShort(2));
+
+        console.log(FibionachiFinderShort(6));
+        console.log(FibionachiFinder(7));
+        console.log(FibionachiFinder(8));
+        console.log(FibionachiFinderShort(9));
+        console.log(FibionachiFinder(10));
     </script>
 </body>
 
