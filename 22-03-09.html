@@ -12,12 +12,12 @@
             if (number == 1) {
                 return number;
             } else {
-                return number * factorial(number - 1)
+                return number * factorial(number - 1);
             }
         }
 
         //Pirma su pasunkinimu
-        var factorialShort = (number) => number == 1 ? number : number * factorialShort(number - 1);
+        var factorialShort = (number) => number == 1 ? number : number * factorialShort(--number);
 
 
         //Antra uzduotis
