@@ -18,7 +18,6 @@
         console.log(factorial(6));
         console.log(factorial(5));
 
-
         //Pirma su pasunkinimu
         var factorialShort = (number) => number == 1 ? number : number * factorialShort(--number);
 
@@ -40,6 +39,55 @@
 
         console.log(FibionachiFinderShort(6));
         console.log(FibionachiFinderShort(9));
+
+
+        var students = [{
+            name: "Mindaugas",
+            grades: [10, 5, 7]
+        }, {
+            name: "Jonas",
+            grades: [10, 5, 7]
+        }, {
+            name: "Ana",
+            grades: [10, 5, 7, 10]
+        }, ];
+
+        //3.1 naudojant savo funkcija
+        function StudentsWithAvarageMy(students) {
+            var studentsWithAvg = [];
+            for (var i = 0; i < students.length; i++) {
+                studentsWithAvg.push({
+                    "name": students[i].name,
+                    "avg": AvarageGradeOfStudent(students[i])
+                });
+            }
+            return studentsWithAvg;
+        }
+
+        function AvarageGradeOfStudent(student) {
+            let sum = 0;
+            for (let j = 0; j < student.grades.length; j++) {
+                sum = sum + student.grades[j];
+            }
+            return sum / student.grades.length;
+        }
+
+        console.log(StudentsWithAvarageMy(students));
+
+        //3.2 naudojant reduce(x,y =>)
+        function StudentsWithAvarageReduce(students) {
+            var studentsWithAvg = [];
+            for (var i = 0; i < students.length; i++) {
+                let sum = students[i].grades.reduce((x, y) => x + y);
+                let avg = sum / students[i].grades.length;
+                studentsWithAvg.push({
+                    "name": students[i].name,
+                    "avg": avg
+                });
+            }
+            return studentsWithAvg;
+        }
+        console.log(StudentsWithAvarageReduce(students));
     </script>
 </body>
 
