@@ -67,6 +67,28 @@
         }
 
         console.log(mergeAndSortArrays(numArrayOne, numArrayTwo));
+
+        //3.1 uzduotis
+        var arraynumeber = [1, 2, 3];
+        console.log(arraynumeber);
+
+        function AddtoCustomPlaceInArray(array, place, element) {
+            array.splice(place, 0, element);
+            return array;
+        }
+
+        console.log(AddtoCustomPlaceInArray(arraynumeber, 1, 45));
+
+
+        //3.2 uzduotis
+        var arraynumeberrem = [1, 2, 8, 3];
+        console.log(arraynumeberrem);
+
+        function removetoCustomPlaceInArray(array, place) {
+            return array.slice(0, place).concat(array.slice(place + 1, array.lenght));
+        }
+
+        console.log(removetoCustomPlaceInArray(arraynumeberrem, 2));
     </script>
 </body>
 
