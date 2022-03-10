@@ -8,8 +8,12 @@
 <body>
     <script>
         //1. uzduotus
+
+        //Klase apsirasymas
         class Car {
 
+            //konstruktorius, bus kvieciamas naudojant new {klases pavadinimas}, siuo atveju new Car
+            //ir sukurs objekta Car, kurio paremtrai bus tokie kokius nurodeme konstruktoriuje
             constructor(make, model, color, engine, basePrice) {
                 this.make = make;
                 this.model = model;
@@ -18,6 +22,7 @@
                 this.basePrice = basePrice;
             }
 
+            //cia apsirasome metodus, nuo klases sukurtas objektas taippat juos tures
             getPrice() {
                 return this.basePrice * this.engine.horsePower + this.basePrice / 2 * this.engine.displacement;
             }
@@ -39,6 +44,7 @@
             }
         }
 
+        //inicioudamas ford kintamaji naudoju new car konstruktoriu ir i parametrus paduodu norimas, reiksmias, engine paduodu kaip objekta.
         var fordas = new Car("Ford", "Focus", "Geltona", {
             horsePower: 400,
             displacement: 2.0,
@@ -47,8 +53,11 @@
             }
         }, 20);
 
+        //inicioudamas ford kintamaji naudoju new car konstruktoriu ir i parametrus paduodu norimas, reiksmias, engine paduodu kaip objekta, bet iniciota is klase,
+        //sitaip kodas atrodo graziau ir labiau suprantamas.
         var toyota = new Car("Toyota", "Corola", "Melyna", new Engine(245, 3.2), 15);
 
+        //console.log'ai pasitikrinimui
         console.log(fordas);
         console.log(fordas.getPrice());
         console.log(fordas.getKw());
@@ -62,6 +71,7 @@
         var numArrayOne = [1, 5, 9, 8, 7];
         var numArrayTwo = [4, 8, 7, 9, 6, 3, 2, 1, 4];
 
+        //concat funkcija sujungia abudu masyvus, o sort, issortina arba lietuviskai jeigu isrykiuoja, svarbu yra eiliskimus.
         function mergeAndSortArrays(arr1, arr2) {
             return numArrayOne.concat(numArrayTwo).sort();
         }
@@ -72,7 +82,11 @@
         var arraynumeber = [1, 2, 3];
         console.log(arraynumeber);
 
+
         function AddtoCustomPlaceInArray(array, place, element) {
+            //splice metodas, iterpia i arreju nauja elementa, pirmas parametras nusako ties kuria vieta,
+            // antras parametras kiek elemtu is masyvo istrinti, (siuo atveju 0, nes nieko istrinti nenorime)
+            // trecias, ir visi tolimesni parametrai (ju gali but betkiek) nusako ka pridesime
             array.splice(place, 0, element);
             return array;
         }
@@ -85,6 +99,10 @@
         console.log(arraynumeberrem);
 
         function removetoCustomPlaceInArray(array, place) {
+            //slice grazina arrejau dali Nuo iki, pirmas parametras nuo kokiu indekso, antras parametras iki kokio indekso
+            //tai jei noriu is arrejaus issimti tai cia nuo 0 iki pasirinkto elemnto (kintamojo "place"), iskerpu array
+            //ir sujungiu su kitu pjuviu (splice) is masyvo, kur pasirenku indexa kaip norimo iskirpti elemento indekso +1 iki pat array galo
+            // viso pasekoje gaunasi kad iskerpu elementa is norimos vietos,
             return array.slice(0, place).concat(array.slice(place + 1, array.lenght));
         }
 
