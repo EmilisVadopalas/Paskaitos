@@ -52,6 +52,17 @@
             grades: [10, 5, 7, 10]
         }, ];
 
+        var studentsnew = [{
+            name: "Mindaugas",
+            grades: [10, 5, 7, 8, 8]
+        }, {
+            name: "Jonas",
+            grades: [10, 5]
+        }, {
+            name: "Ana",
+            grades: [10, 5, 7, 10, -51]
+        }, ];
+
         //3.1 naudojant savo funkcija
         function StudentsWithAvarageMy(students) {
             var studentsWithAvg = [];
@@ -72,7 +83,7 @@
             }
         }
 
-        console.log(StudentsWithAvarageMy(students));
+        console.log(StudentsWithAvarageMy(studentsnew));
 
         //3.2 naudojant reduce(x,y =>)
         function StudentsWithAvarageReduce(students) {
@@ -86,7 +97,7 @@
             }
             return studentsWithAvg;
         }
-        console.log(StudentsWithAvarageReduce(students));
+        console.log(StudentsWithAvarageReduce(studentsnew));
     </script>
 </body>
 
