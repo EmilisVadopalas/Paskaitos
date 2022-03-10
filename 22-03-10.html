@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <title>22-03-10</title>
+</head>
+
+<body>
+    <script>
+        //1. uzduotus
+        class Car {
+
+            constructor(make, model, color, engine, basePrice) {
+                this.make = make;
+                this.model = model;
+                this.engine = engine;
+                this.color = color;
+                this.basePrice = basePrice;
+            }
+
+            getPrice() {
+                return this.basePrice * this.engine.horsePower + this.basePrice / 2 * this.engine.displacement;
+            }
+
+            getKw() {
+                return this.engine.getKw()
+            }
+        }
+
+        //1.1 uzduotis
+        class Engine {
+            constructor(horsePower, displacement) {
+                this.displacement = displacement;
+                this.horsePower = horsePower;
+            }
+
+            getKw() {
+                return Math.round(this.horsePower * 0.745699872);
+            }
+        }
+
+        var fordas = new Car("Ford", "Focus", "Geltona", {
+            horsePower: 400,
+            displacement: 2.0,
+            getKw: function() {
+                return Math.round(this.horsePower * 0.745699872);
+            }
+        }, 20);
+
+        var toyota = new Car("Toyota", "Corola", "Melyna", new Engine(245, 3.2), 15);
+
+        console.log(fordas);
+        console.log(fordas.getPrice());
+        console.log(fordas.getKw());
+
+        console.log(toyota);
+        console.log(toyota.getPrice());
+        console.log(toyota.engine.getKw());
+    </script>
+</body>
+
+</html>
