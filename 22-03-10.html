@@ -155,6 +155,44 @@
 
         console.log(numbers1.filter(filterMoreThanTen));
         console.log(numbers1.filter((x) => x >= 10));
+
+
+        //5. parasyti funkcija su kuri masyva sujungtu i teksta su pasirinktai skirtukais
+        //
+        // pvz: masyvui esant [1, 2, 3, 4] ir funkcija iskvietus su separator = " ir ", 
+        // rezultata turetume gauti stringa kuris atrodo taip: "1 ir 2 ir 3 ir 4"
+        function CustomJoin(array, separator) {
+            var result = "";
+            for (var i = 0; i < array.length; i++) {
+                if (i + 1 == array.length) {
+                    result += array[i];
+                } else {
+                    result += array[i] + separator;
+                }
+
+            }
+            return result
+        }
+
+        console.log(CustomJoin(numbers1, "| ir |"));
+
+        //6. 
+        function CustomJoinWithEndings(array, separator, endings) {
+            var result = "";
+            for (var i = 0; i < array.length; i++) {
+                if (i + 1 == array.length) {
+                    result += array[i] + endings;
+                } else if (i == 0) {
+                    result += endings + array[i] + separator;
+                } else {
+                    result += array[i] + separator;
+                }
+
+            }
+            return result
+        }
+
+        console.log(CustomJoinWithEndings(numbers1, "| ir |", "|"));
     </script>
 </body>
 
