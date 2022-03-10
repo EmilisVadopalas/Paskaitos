@@ -89,6 +89,54 @@
         }
 
         console.log(removetoCustomPlaceInArray(arraynumeberrem, 2));
+
+
+
+        const numbers1 = [45, 4, 9, 16, 25];
+
+        //4.1 array.MAP (value, index, array)
+        function TimesTwo(value, index) {
+            return value * index + index;
+        }
+
+        console.log(numbers1.map(TimesTwo));
+
+        console.log(numbers1.map((x) => x * 2));
+
+
+        //4.2 array.REDUCE  (total, value, index, array)
+        function SumArray(previuos, current) {
+            return current + previuos;
+        }
+
+        //4.2 (pasunkinimas)
+        function AvarageArray(previuos, value, index, array) {
+
+            // classic
+            if (index == array.length - 1) {
+                return ((previuos + value) / (index + 1)).toFixed(2);
+            } else {
+                return previuos + value;
+            }
+
+            //shorthand
+            return index == array.length - 1 ?
+                ((previuos + value) / (index + 1)).toFixed(2) :
+                previuos + value;
+        }
+
+        console.log(numbers1.reduce(SumArray));
+        console.log(numbers1.reduce(AvarageArray));
+        console.log(numbers1.reduce((x, y) => x + y));
+
+
+        //4.3 array.Filter (value, index, array)
+        function filterMoreThanTen(value) {
+            return value % 2 == 0;
+        }
+
+        console.log(numbers1.filter(filterMoreThanTen));
+        console.log(numbers1.filter((x) => x >= 10));
     </script>
 </body>
 
