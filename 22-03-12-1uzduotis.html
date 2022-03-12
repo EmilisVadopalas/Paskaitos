@@ -13,8 +13,8 @@
     <div class="card" style="height: 400px; width: 600px; padding-top: 100px; padding-left: 120px; padding-right: 120px; margin: auto; margin-top: 100px;">
 
         <input type="text" class="form-control mb-2 mr-sm-2" id="nameInput" placeholder="Jusu vardas">
-        <button type="button" id="logInButton" class="btn btn-primary">Prisijungti</button>
-        <p id="greetingField"></p>
+        <button onclick="greetUser()" type="button" id="logInButton" class="btn btn-primary">Prisijungti</button>
+        <p style="margin: auto; margin-top: 20px;" id="greetingField"></p>
 
     </div>
 
@@ -23,6 +23,11 @@
         //ivedus i text box'a varda ir paspaudus mygtuka prisijungti, 
         //paragrafo elemente (id=greetingField), turetu, atsirasti tekstas, 
         //sveikinantis jus prisijungus (pasveikinti naudojant ivesta varda.)
+
+        function greetUser() {
+            var userName = document.getElementById("nameInput").value;
+            document.getElementById("greetingField").innerHTML = `<b>${userName}</b>, sveiki prisijunge !`
+        }
     </script>
 </body>
 
