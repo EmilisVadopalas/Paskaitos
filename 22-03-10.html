@@ -9,6 +9,7 @@
     <script>
         //1. uzduotus
 
+        const HORSE_POWER_TO_KW_RATIO = 0.745699872;
         //Klase apsirasymas
         class Car {
 
@@ -40,7 +41,7 @@
             }
 
             getKw() {
-                return Math.round(this.horsePower * 0.745699872);
+                return Math.round(this.horsePower * HORSE_POWER_TO_KW_RATIO);
             }
         }
 
@@ -49,7 +50,7 @@
             horsePower: 400,
             displacement: 2.0,
             getKw: function() {
-                return Math.round(this.horsePower * 0.745699872);
+                return Math.round(this.horsePower * HORSE_POWER_TO_KW_RATIO);
             }
         }, 20);
 
