@@ -24,9 +24,9 @@
         //paragrafo elemente (id=greetingField), turetu, atsirasti tekstas, 
         //sveikinantis jus prisijungus (pasveikinti naudojant ivesta varda.)
 
-        function greetUser() {
-            var userName = document.getElementById("nameInput").value;
-            document.getElementById("greetingField").innerHTML = `<b>${userName}</b>, sveiki prisijunge !`
+        function greetUser() { //funkcija kuria iskviesiu, onclik
+            var userName = document.getElementById("nameInput").value; //pasirenku text input elementa, pagal jo ID, su ".value" gaunu reiksme kuri ivesta i text field'a
+            document.getElementById("greetingField").innerHTML = `<b>${userName}</b>, sveiki prisijunge !` //. i P elemnta i terpiu innerHTML su reiksmem
         }
     </script>
 </body>
