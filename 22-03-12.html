@@ -24,7 +24,7 @@
             </form>
             <h2 class="title">Items</h2>
             <ul id="items" class="list-group">
-                <li class="list-group-item">Item 1</li>
+                <li class="list-group-item"><a>Item 1</a></li>
                 <li class="list-group-item">Item 2</li>
                 <li class="list-group-item">Item 3</li>
                 <li class="list-group-item">Item 4</li>
@@ -33,6 +33,15 @@
             </ul>
         </div>
     </div>
+
+    <div class="card">
+
+        <input type="text" class="form-control mb-2 mr-sm-2" id="nameInput" placeholder="Jusu vardas">
+        <button type="button" id="logInButton" class="btn btn-primary">Prisijungti</button>
+        <p id="greetingField"></p>
+
+    </div>
+
     <script>
         // JS ELEMENTU SELEKTORIAI //
 
@@ -54,8 +63,160 @@
 
         // QUERYSELECTOR //  - pasirenka ELEMENTA, pagal CSS selektoriu - grazina pirma toki elementa
         var queryitem = document.querySelector('.list-group-item');
-        queryitem.innerHTML = "pirmas irasas, sarase";
+        //queryitem.innerHTML = "pirmas irasas, sarase";
+
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // TRAVERSING THE DOM //
+        var ulElement = document.querySelector('#items');
+        //parentNode
+        ulElement.parentNode.style.backgroundColor = 'red';
+        ulElement.parentNode.parentNode.style.backgroundColor = 'green';
+        //console.log(ulElement.parentNode.parentNode.parentNode.parentNode.parentNode);
+        // console.log(itemList.parentNode.parentNode.parentNode);
+
+        //parentElement
+        ulElement.parentElement.style.backgroundColor = '#f4f4f4';
+        //console.log(ulElement.parentElement.parentElement.parentElement.parentElement.parentElement);
+
+        //childNodes
+        console.log(ulElement.childNodes);
+        var items = ulElement.childNodes;
+
+        for (var i = 0; i < items.length; i++) {
+            if (i % 2 == 0) {
+                items[i].textContent = "kitas tekstas";
+            }
+        }
+
+        //Children
+        console.log(ulElement.children);
+        var items = ulElement.children;
+
+
+        // FirstChild
+        console.log(ulElement.firstChild); // = childnodes[0]
+        // firstElementChild
+        console.log(ulElement.firstElementChild); // = children[0]
+
+
+        //lastChild
+        console.log(ulElement.lastChild); // = childnode[childnode.lenght -1]
+        ulElement.lastChild.textContent = "tekstas pasikeist sitoks";
+        //lastElementChild
+        console.log(ulElement.lastElementChild); // = children[children.lenght -1]
+        ulElement.lastElementChild.innerHTML = "paskutinio elemento tekstas";
+
+
+
+
+
+        var list = document.getElementById("items");
+
+        var listItem = list.firstElementChild;
+
+        console.log(listItem.innerHTML);
+        //nextSibling
+        console.log(listItem.nextSibling.nextSibling.innerHTML); //Childnode[++i]
+        //nextElementSibling
+        console.log(listItem.nextElementSibling.nextElementSibling.innerHTML); //Children[++i]
+
+        listItem = list.lastElementChild;
+
+        //previousSibling
+        console.log(listItem.previousSibling); //Childnode[--i]
+        //previousElementSibling
+        console.log(listItem.previousElementSibling); //Children[--i]
+
+
+        // createElement
+
+
+        // <li class="list-group-item">Item 6</li>
+        // Create a div
+        var newDiv = document.createElement('li');
+
+        // Add class
+        newDiv.className = 'list-group-item';
+        newDiv.innerText = "testas 545";
+
+
+
+        document.getElementsByTagName("ul")[0].insertBefore(newDiv, document.getElementsByTagName("li")[0]);
+
+        //document.getElementsByTagName("ul")[0].appendChild(newDiv);
+
+        //EVENTS //
+
+        var button = document.getElementById('button');
+
+        function eventLogger(e) {
+
+            console.warn("event logai:::")
+
+            console.log(e);
+
+            console.log(e.target);
+            console.log(e.target.id);
+            console.log(e.target.className);
+            console.log(e.target.classList);
+
+            console.log(e.type);
+
+            console.log(e.clientX);
+            console.log(e.clientY);
+
+            console.log(e.offsetX);
+            console.log(e.offsetY);
+
+            console.log(e.altKey);
+            console.log(e.ctrlKey);
+            console.log(e.shiftKey);
+        }
+
+        //button.addEventListener('click', eventLogger);
+        //button.addEventListener('dblclick', eventLogger);
+        //button.addEventListener('mousedown', eventLogger);
+        //button.addEventListener('mouseup', eventLogger);
+
+        //button.addEventListener('mouseenter', eventLogger);
+        //button.addEventListener('mouseleave', eventLogger);
+
+        //button.addEventListener('mouseover', eventLogger);
+        //button.addEventListener('mouseout', eventLogger);
+
+        //button.addEventListener('mousemove', eventLogger);
+
+
+        //button.addEventListener('keydown', eventLogger);
+        //button.addEventListener('keyup', eventLogger);
+        //button.addEventListener('keypress', eventLogger);
+
+        //button.addEventListener('focus', eventLogger);
+        //button.addEventListener('blur', eventLogger);
+
+        //button.addEventListener('cut', eventLogger);
+        //button.addEventListener('paste', eventLogger);
+
+        //button.addEventListener('input', eventLogger);
+
+        //button.addEventListener('change', eventLogger);
+
+        //form.addEventListener('submit', eventLogger);
+
+        // function runEvent(e) {
+        //     e.preventDefault();
+        //     console.log('EVENT TYPE: ' + e.type);
+
+        //     //console.log(e.target.value);
+        //     // document.getElementById('output').innerHTML = '<h3>'+e.target.value+'</h3>';
+
+        //     // output.innerHTML = '<h3>MouseX: '+e.offsetX+' </h3><h3>MouseY: '+e.offsetY+'</h3>';
+
+        //     // document.body.style.backgroundColor = "rgb("+e.offsetX+","+e.offsetY+", 40)";
+        // }
     </script>
+
 </body>
 
 </html>
