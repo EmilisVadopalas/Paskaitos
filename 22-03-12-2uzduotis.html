@@ -34,10 +34,10 @@
     <div class="container">
         <div id="main" class="card card-body">
             <h2 class="title">Add Items</h2>
-            <form class="form-inline mb-3">
+            <div class="form-inline mb-3">
                 <input type="text" class="form-control mr-2" />
-                <input onclick="addToListButton()" class="btn btn-dark" value="Submit" />
-            </form>
+                <button onclick="addToListButton()" class="btn btn-dark">Submit</button>
+            </div>
             <h2 class="title">Items</h2>
             <ul id="items" class="list-group">
                 <li class="list-group-item">Item 1 <button type="button" onclick="deleteThisElement(this)" class="btn btn-danger btn-circle btn-sm closebutton"><div>x</div></button></li>
