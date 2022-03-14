@@ -9,11 +9,11 @@
     <script>
         //Pirma uzduotis, paklaust vartotojo vardo jei local storage nera jo,
         //jei local storage, jau yra vartotojo, vardas, pasveikint ji sugryzus
-        if (localStorage.getItem("UserName")) {
+        if (localStorage.getItem("UserName")) { //jei nera tokio Key, local storage'e, graznima null reiksme, kas JS priskiriama, kaip false
             console.log(`Sveiki sugryze ${localStorage.getItem("UserName")}`);
         } else {
-            var userName = prompt("Please enter your name");
-            localStorage.setItem("UserName", userName);
+            var userName = prompt("Please enter your name"); //promtas, per kuri useris suveda savo varda, issaugome suvesta varda i kintamaji,
+            localStorage.setItem("UserName", userName); // issaugome suvesta varda local storage, raktas: "UserName", Value: userName kintamoje reiksme, (tai ka suvede vartotojas)
         }
     </script>
 </body>
