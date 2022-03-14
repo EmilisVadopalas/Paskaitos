@@ -75,7 +75,7 @@
 
         fetch(request)
             .then(response => response.json())
-            .then(catFacts => console.log(catFacts.data.reduce((x, y) => typeof(x) == "string" ? `${x}\n${y.fact}` : `${x.fact}\n${y.fact}`)))
+            .then(catFacts => console.log(catFacts.data.reduce((x, y) => typeof(x) == "string" ? `${x}\n\n${y.fact}` : `${x.fact}\n\n${y.fact}`)))
             .catch(error => console.error(error));
     </script>
 </body>
