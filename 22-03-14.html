@@ -44,14 +44,14 @@
 
 
 
-        // Create request object 
+        //2. uzduotis
         var request = new Request('https://catfact.ninja/fact', {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
         });
-        // Now use it! 
+
         var catFacts = [];
 
         for (let i = 0; i < 10; i++) {
@@ -63,6 +63,23 @@
                     //console.log(catFacts);
                 });
         }
+
+
+        //3. uzduotis (pasunkinta)
+        request = new Request("https://catfact.ninja/facts?limit=10", {
+            method: 'GET',
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        });
+
+        fetch(request)
+            .then(response => response.json()) //Responco objecktas ir ka su juo darome 
+            .then(catFacts => console.log(catFacts.data.reduce((x, y) => typeof(x) == "string" ? `${x} \n ${y.fact}` : `${x.fact} \n ${y.fact}`))) // kai is receponco gauname .Json() priskiriami ji savo kintamajui
+            .catch(error => console.error(error)) // Catch isskivies esant errorui
+            .finally(() => { //finally issikvies paciam gale po  visko
+                //console.log(catFacts);
+            });
     </script>
 </body>
 
