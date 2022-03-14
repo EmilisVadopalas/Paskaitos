@@ -15,6 +15,54 @@
             var userName = prompt("Please enter your name"); //promtas, per kuri useris suveda savo varda, issaugome suvesta varda i kintamaji,
             localStorage.setItem("UserName", userName); // issaugome suvesta varda local storage, raktas: "UserName", Value: userName kintamoje reiksme, (tai ka suvede vartotojas)
         }
+
+        localStorage.setItem("vienas", "vienas 111");
+        localStorage.setItem("du", "22");
+        localStorage.setItem("trys", "333");
+        localStorage.setItem("keturi", "4444");
+
+        console.log(localStorage);
+
+        var myObject = {
+            name: "TestObject",
+            type: "Object (reference type)",
+            someOtherObjct: {
+                name: "diferent object",
+                difParameter: "something",
+                otherParameter: "SomethingSomething"
+            }
+        }
+
+        console.log(JSON.stringify(myObject));
+
+        localStorage.setItem("my Object", JSON.stringify(myObject)); //Json.stringify objecka convertuoja i stringa, kuri veliau galmes konvertuoti atgal i objeckta
+
+        console.log(localStorage.getItem("my Object"));
+        var myParsedObject = JSON.parse(localStorage.getItem("my Object")); // JSON.parse json stringa, konvertuoja atgal i objekta 
+
+        console.log(`objecto name: ${myParsedObject.name}`)
+
+
+
+        // Create request object 
+        var request = new Request('https://catfact.ninja/fact', {
+            method: 'GET',
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        });
+        // Now use it! 
+        var catFacts = [];
+
+        for (let i = 0; i < 10; i++) {
+            fetch(request)
+                .then(response => response.json()) //Responco objecktas ir ka su juo darome 
+                .then(catfact => console.log(catfact.fact)) // kai is receponco gauname .Json() priskiriami ji savo kintamajui
+                .catch(error => console.error(error)) // Catch isskivies esant errorui
+                .finally(() => { //finally issikvies paciam gale po  visko
+                    //console.log(catFacts);
+                });
+        }
     </script>
 </body>
 
