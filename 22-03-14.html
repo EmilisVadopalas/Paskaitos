@@ -74,12 +74,9 @@
         });
 
         fetch(request)
-            .then(response => response.json()) //Responco objecktas ir ka su juo darome 
-            .then(catFacts => console.log(catFacts.data.reduce((x, y) => typeof(x) == "string" ? `${x} \n ${y.fact}` : `${x.fact} \n ${y.fact}`))) // kai is receponco gauname .Json() priskiriami ji savo kintamajui
-            .catch(error => console.error(error)) // Catch isskivies esant errorui
-            .finally(() => { //finally issikvies paciam gale po  visko
-                //console.log(catFacts);
-            });
+            .then(response => response.json())
+            .then(catFacts => console.log(catFacts.data.reduce((x, y) => typeof(x) == "string" ? `${x}\n${y.fact}` : `${x.fact}\n${y.fact}`)))
+            .catch(error => console.error(error));
     </script>
 </body>
 
