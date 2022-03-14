@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <title>22-03-14</title>
+</head>
+
+<body>
+    <script>
+        //Pirma uzduotis, paklaust vartotojo vardo jei local storage nera jo,
+        //jei local storage, jau yra vartotojo, vardas, pasveikint ji sugryzus
+        if (localStorage.getItem("UserName")) {
+            console.log(`Sveiki sugryze ${localStorage.getItem("UserName")}`);
+        } else {
+            var userName = prompt("Please enter your name");
+            localStorage.setItem("UserName", userName);
+        }
+    </script>
+</body>
+
+</html>
